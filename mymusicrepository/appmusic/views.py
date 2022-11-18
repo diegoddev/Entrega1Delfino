@@ -9,7 +9,9 @@ def index(request):
 
 
 def artistas(request):
-    return render(request, "appmusic/artistas.html")
+
+    artistas_buscar = Artistas.objects.all()
+    return render(request, "appmusic/artistas.html", {"artistas_buscar": artistas_buscar})
 
 
 def artistas_create(request):
@@ -33,7 +35,9 @@ def artistas_create(request):
 
 
 def canciones(request):
-    return render(request, "appmusic/canciones.html")
+
+    canciones_buscar = Canciones.objects.all()
+    return render(request, "appmusic/canciones.html", {"canciones_buscar": canciones_buscar})
 
 
 def canciones_create(request):
@@ -57,7 +61,9 @@ def canciones_create(request):
 
 
 def albums(request):
-    return render(request, "appmusic/albums.html")
+
+    albums_buscar = Albums.objects.all()
+    return render(request, "appmusic/albums.html", {"albums_buscar": albums_buscar})
 
 
 def albums_create(request):
@@ -84,6 +90,10 @@ def search(request):
 
 
 def search_result(request):
-    return render(request, "appmusic/search_result.html")
+
+    artista_canciones = request.GET["artista_canciones"]
+    canciones = Canciones.objects.filter(artista__icontains = artista_canciones)
+
+    return render(request, "appmusic/search_result.html", {"canciones": canciones})
 
 

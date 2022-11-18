@@ -29,86 +29,21 @@ Estos son tus<strong class="theme-color">Albums</strong> favoritos
             <!-- play list -->
             <div class="playlist-content">
                 <ul class="list-unstyled">
-                    <li class="playlist-number">
-                        <!-- song information -->
-                        <div class="song-info">
-                            <!-- song title -->
-                            <h4>Melodi Song Track One</h4>
-                            <p><strong>Album</strong>: Title &nbsp;|&nbsp; <strong>Type</strong>: Rock &nbsp;|&nbsp; <strong>Singer</strong>: Dawn</p>
-                        </div>
-                        <div class="clearfix"></div>
-                    </li>
-                    <li class="playlist-number">
-                        <!-- song information -->
-                        <div class="song-info">
-                            <!-- song title -->
-                            <h4>Melodi Song Track Two</h4>
-                            <p><strong>Album</strong>: Title &nbsp;|&nbsp; <strong>Type</strong>: Rock &nbsp;|&nbsp; <strong>Singer</strong>: Dawn</p>
-                        </div>
 
-                        <div class="clearfix"></div>
-                    </li>
-                    <li class="playlist-number">
-                        <!-- song information -->
-                        <div class="song-info">
-                            <!-- song title -->
-                            <h4>Melodi Song Track Three</h4>
-                            <p><strong>Album</strong>: Title &nbsp;|&nbsp; <strong>Type</strong>: Rock &nbsp;|&nbsp; <strong>Singer</strong>: Dawn</p>
-                        </div>
+                    {% for album in albums_buscar %}
 
-                        <div class="clearfix"></div>
-                    </li>
                     <li class="playlist-number">
                         <!-- song information -->
                         <div class="song-info">
                             <!-- song title -->
-                            <h4>Melodi Song Track Four</h4>
-                            <p><strong>Album</strong>: Title &nbsp;|&nbsp; <strong>Type</strong>: Rock &nbsp;|&nbsp; <strong>Singer</strong>: Dawn</p>
+                            <h4>{{album.nombre}}</h4>
+                            <p><strong>Artista</strong>: {{album.artista}} &nbsp;|&nbsp; <strong>Género</strong>: {{album.genero}} &nbsp;|&nbsp; <strong>Año</strong>: {{album.axo_publicacion}}</p>
                         </div>
+                        <div class="clearfix"></div>
+                    </li>
 
-                        <div class="clearfix"></div>
-                    </li>
-                    <li class="playlist-number">
-                        <!-- song information -->
-                        <div class="song-info">
-                            <!-- song title -->
-                            <h4>Melodi Song Track Five</h4>
-                            <p><strong>Album</strong>: Title &nbsp;|&nbsp; <strong>Type</strong>: Rock &nbsp;|&nbsp; <strong>Singer</strong>: Dawn</p>
-                        </div>
+                    {% endfor %}
 
-                        <div class="clearfix"></div>
-                    </li>
-                    <li class="playlist-number">
-                        <!-- song information -->
-                        <div class="song-info">
-                            <!-- song title -->
-                            <h4>Melodi Song Track Six</h4>
-                            <p><strong>Album</strong>: Title &nbsp;|&nbsp; <strong>Type</strong>: Rock &nbsp;|&nbsp; <strong>Singer</strong>: Dawn</p>
-                        </div>
-                        <!-- music icon -->
-
-                        <div class="clearfix"></div>
-                    </li>
-                    <li class="playlist-number">
-                        <!-- song information -->
-                        <div class="song-info">
-                            <!-- song title -->
-                            <h4>Melodi Song Track Seven</h4>
-                            <p><strong>Album</strong>: Title &nbsp;|&nbsp; <strong>Type</strong>: Rock &nbsp;|&nbsp; <strong>Singer</strong>: Dawn</p>
-                        </div>
-                       
-                        <div class="clearfix"></div>
-                    </li>
-                    <li class="playlist-number">
-                        <!-- song information -->
-                        <div class="song-info">
-                            <!-- song title -->
-                            <h4>Melodi Song Track Eight</h4>
-                            <p><strong>Album</strong>: Title &nbsp;|&nbsp; <strong>Type</strong>: Rock &nbsp;|&nbsp; <strong>Singer</strong>: Dawn</p>
-                        </div>
-
-                        <div class="clearfix"></div>
-                    </li>
                 </ul>
             </div>
         </div>

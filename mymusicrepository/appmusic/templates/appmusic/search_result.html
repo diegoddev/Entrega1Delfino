@@ -1,11 +1,10 @@
 {% extends 'appmusic/base.html' %}
 
-{% block title %}Canciones{% endblock %}
+{% block title %}Resultado de Busqueda{% endblock %}
 
 {% block subtitle %}
 
-Dale un vistazo a las <strong class="theme-color">Canciones</strong> que mas te gustan
- | Para Almacenar presiona <a href="{% url 'music-canciones-form' %}">AQUÍ</a>.
+Este es el <strong class="theme-color">Resultado</strong> de tu busqueda.
 
 {% endblock %}
 
@@ -30,7 +29,7 @@ Dale un vistazo a las <strong class="theme-color">Canciones</strong> que mas te 
             <div class="playlist-content">
                 <ul class="list-unstyled">
 
-                    {% for cancion in canciones_buscar %}
+                    {% for cancion in canciones %}
 
                     <li class="playlist-number">
                         <!-- song information -->

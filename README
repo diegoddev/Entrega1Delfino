@@ -1,1 +1,20 @@
 # My Music Repository
+
+My Music Repository es un proyecto donde se desarrolla una web con django en la cual podremos almacenar los
+datos o información dentro de las categoría de artistas, canciones y álbumes que mas nos gustan, con la idea de nunca perder o 
+siempre tener al alcance nuestras melodías favoritas
+
+El funcionamiento de la web, se realiza con una aplicación que permite almacenar y mostrar los datos de distintos
+modelos (artistas, canciones y albums).
+
+Existen 3 pestañas en la página de inicio de la web que nos van a redirigir a cada una de las categorías
+mencionadas, que a su vez estarán mostrando en todo momento los datos que fuimos ingresando. En cada categoría se
+visualizará solamente la información correpsondiente a la misma.
+
+Dentro de la template al que nos lleva cada una de las pestañas, tendremos la opción de ir a un formulario done podremos hacer ingreso de los datos ya sea de los artistas, canciones o álbumes que querramos, y una vez guardados, al momento de ir nuevamente a la pagina principal de cada categoría/template ya veremos reflejado nuestro nuevo objeto.
+
+Por último, dentro de la pestaña de buscar, podremos hacer un filtro sobre las canciones del artista del cual querramos indagar que canciones son las que mas nos gustan de el (las que hemos registrado de el).
+
+Este proyecto tiene potenciales mejoras. En caso de querés dejar alguna reseña o recomendación, soy todo oídos.
+
+

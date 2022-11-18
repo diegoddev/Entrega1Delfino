@@ -1,1 +1,13 @@
 {% extends 'appmusic/base.html' %}
+
+{% block form %}
+
+<form action="{% url 'music-search-result' %}" method="get">
+
+    <h4>
+        Artista: <input type="text" name="artista_canciones">
+        <input type="submit" value="Buscar">
+    </h4>
+
+</form>
+{% endblock %}
