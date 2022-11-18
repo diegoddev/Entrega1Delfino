@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+
+    {% load static %}
+
+	<head>
+		<meta charset="utf-8">
+		<title>My Music Repository</title>
+		<!-- Description, Keywords and Author -->
+		<meta name="description" content="Your description">
+		<meta name="keywords" content="Your,Keywords">
+		<meta name="author" content="HimanshuGupta">
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+		<!-- Styles -->
+		<!-- Bootstrap CSS -->
+		<link href="{% static 'appmusic/css/bootstrap.min.css' %}" rel="stylesheet">	
+		<!-- Animate CSS -->
+		<link href="{% static 'appmusic/css/animate.min.css' %}" rel="stylesheet">
+		<!-- Basic stylesheet -->
+		<link rel="stylesheet" href="{% static 'appmusic/css/owl.carousel.css' %}">
+		<!-- Font awesome CSS -->
+		<link href="{% static 'appmusic/css/font-awesome.min.css' %}" rel="stylesheet">		
+		<!-- Custom CSS -->
+		<link href="{% static 'appmusic/css/style.css' %}" rel="stylesheet">
+		<link href="{% static 'appmusic/css/style-color.css'%}" rel="stylesheet">
+		
+		<!-- Favicon -->
+		<link rel="shortcut icon" href="{% static 'appmusic/img/logo/logo2.jpeg' %}">
+	</head>
+	
+	<body>
+		
+		<!-- modal for booking ticket form -->
+
+		
+		<!-- wrapper -->
+		<div class="wrapper" id="home">
+		
+			<!-- header area -->
+			<header>
+				<!-- secondary menu -->
+				<nav class="secondary-menu">
+					<div class="container">
+						<!-- secondary menu left link area -->
+
+						<!-- secondary menu right link area -->
+						<div class="sm-right">
+							<!-- social link -->
+							<div class="sm-social-link">
+								<a class="h-facebook" href="#"><i class="fa fa-facebook"></i></a>
+								<a class="h-twitter" href="#"><i class="fa fa-twitter"></i></a>
+								<a class="h-google" href="#"><i class="fa fa-google-plus"></i></a>
+								<a class="h-linkedin" href="#"><i class="fa fa-linkedin"></i></a>
+							</div>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+				</nav>
+				<!-- primary menu -->
+				<nav class="navbar navbar-fixed-top navbar-default">
+					<div class="container">
+						<!-- Brand and toggle get grouped for better mobile display -->
+						<div class="navbar-header">
+							<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+								<span class="sr-only">Toggle navigation</span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</button>
+							<!-- logo area -->
+							<a class="navbar-brand" href="{% url 'music-index' %}">
+								<!-- logo image -->
+								<img class="img-responsive" src="{% static 'appmusic/img/logo/logo2.jpeg' %}" alt="" />
+							</a>
+						</div>
+
+						<!-- Collect the nav links, forms, and other content for toggling -->
+						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+							<ul class="nav navbar-nav navbar-right">
+								<li><a href="{% url 'music-artistas' %}">Artistas</a></li>
+								<li><a href="{% url 'music-canciones' %}">Canciones</a></li>
+								<li><a href="{% url 'music-albums' %}">Albums</a></li>
+								<li><a href="{% url 'music-search' %}">Buscar</a></li>
+							</ul>
+						</div><!-- /.navbar-collapse -->
+					</div><!-- /.container-fluid -->
+				</nav>
+			</header>
+			<!--/ header end -->
+
+			
+			<!-- block for animate navigation menu -->
+			<div class="nav-animate"></div>
+			
+			<!-- Hero block area -->
+
+			
+			<div id="latestalbum" class="hero pad">
+				<div class="container">
+					<!-- hero content -->
+					<div class="hero-content ">
+						<!-- heading -->
+						<h2>{% block title %}Buscar{% endblock %}</h2>
+						<hr>
+						<!-- paragraph -->
+						<p>{% block subtitle %}<strong class="theme-color">Busca</strong> las canciones de tus artistas favoritos que hayas guardado.{% endblock %}</p>
+					</div>
+
+					{% block inforepo %}
+					<!-- hero play list -->
+
+					{% endblock %}
+				</div>
+			</div>
+			<!--/ hero end -->
+			
+			<!-- promo -->
+
+			<!-- footer -->
+			<footer>
+				<div class="container">
+					<!-- social media links -->
+					<div class="social">
+						<a class="h-facebook" href="#"><i class="fa fa-facebook"></i></a>
+						<a class="h-google" href="#"><i class="fa fa-google-plus"></i></a>
+						<a class="h-linkedin" href="#"><i class="fa fa-linkedin"></i></a>
+						<a class="h-twitter" href="#"><i class="fa fa-twitter"></i></a>
+					</div>
+					<!-- copy right -->
+					<p class="copy-right">&copy; copyright 2018, All rights are reserved.</p>
+				</div>
+			</footer>
+			<!-- footer end -->
+			
+			<!-- Scroll to top -->
+			<span class="totop"><a href="#"><i class="fa fa-chevron-up"></i></a></span> 
+			
+		</div>
+		
+		<!-- Javascript files -->
+		<!-- jQuery -->
+		<script src="{% static 'appmusic/js/jquery.js' %}"></script>
+		<!-- Bootstrap JS -->
+		<script src="{% static 'appmusic/js/bootstrap.min.js' %}"></script>
+		<!-- WayPoints JS -->
+		<script src="{% static 'appmusic/js/waypoints.min.js' %}"></script>
+		<!-- Include js plugin -->
+		<script src="{% static 'appmusic/js/owl.carousel.min.js' %}"></script>
+		<!-- One Page Nav -->
+		<script src="{% static 'appmusic/js/jquery.nav.js' %}"></script>
+		<!-- Respond JS for IE8 -->
+		<script src="{% static 'appmusic/js/respond.min.js' %}"></script>
+		<!-- HTML5 Support for IE -->
+		<script src="{% static 'appmusic/js/html5shiv.js' %}"></script>
+		<!-- Custom JS -->
+		<script src="{% static 'appmusic/js/custom.js' %}"></script>
+	</body>	
+</html>

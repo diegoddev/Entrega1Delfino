@@ -1,7 +1,6 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
-
-    {% load static %}
 
 	<head>
 		<meta charset="utf-8">
@@ -27,22 +26,13 @@
 		<link href="{% static 'appmusic/css/style-color.css'%}" rel="stylesheet">
 		
 		<!-- Favicon -->
-		<link rel="shortcut icon" href="{% static 'appmusic/img/logo/favicon.ico' %}">
+		<link rel="shortcut icon" href="{% static 'appmusic/img/logo/logo2.jpeg' %}">
 	</head>
 	
 	<body>
 		
 		<!-- modal for booking ticket form -->
-		<div class="modal fade" id="bookTicket" tabindex="-1" role="dialog" aria-labelledby="BookTicket">
-			<div class="modal-dialog" role="document">
-				<div class="modal-content">
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-						<h4 class="modal-title" id="myModalLabel">Name of The Event &nbsp; <small><span class="label label-success">Available</span> &nbsp; <span class="label label-danger">Not Available</span></small></h4>
-					</div>
-				</div>
-			</div>
-		</div>
+
 		
 		<!-- wrapper -->
 		<div class="wrapper" id="home">
@@ -79,18 +69,19 @@
 								<span class="icon-bar"></span>
 							</button>
 							<!-- logo area -->
-							<a class="navbar-brand" href="#home">
+							<a class="navbar-brand" href="{% url 'music-index' %}">
 								<!-- logo image -->
-								<img class="img-responsive" src="{% static 'appmusic/img/logo/logo.png' %}" alt="" />
+								<img class="img-responsive" src="{% static 'appmusic/img/logo/logo2.jpeg' %}" alt="" />
 							</a>
 						</div>
 
 						<!-- Collect the nav links, forms, and other content for toggling -->
 						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 							<ul class="nav navbar-nav navbar-right">
-								<li><a href="#latestalbum">Artistas</a></li>
-								<li><a href="#featuredalbum">Canciones</a></li>
-								<li><a href="#joinus">Albums</a></li>
+								<li><a href="{% url 'music-artistas' %}">Artistas</a></li>
+								<li><a href="{% url 'music-canciones' %}">Canciones</a></li>
+								<li><a href="{% url 'music-albums' %}">Albums</a></li>
+								<li><a href="{% url 'music-search' %}">Buscar</a></li>
 							</ul>
 						</div><!-- /.navbar-collapse -->
 					</div><!-- /.container-fluid -->
@@ -99,6 +90,7 @@
 			<!--/ header end -->
 			
 			<!-- banner area -->
+
 			<div class="banner">
 				<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
 					<!-- Wrapper for slides -->
@@ -109,9 +101,20 @@
 								<!-- banner caption -->
 								<div class="carousel-caption slide-one">
 									<!-- heading -->
-									<h2 class="animated fadeInLeftBig"><i class="fa fa-music"></i> Bienvenido My Music Repository</h2>
+									
+									<h2 class="animated fadeInLeftBig"><i class="fa fa-music"></i>Bienvenido My Music Repository</h2>
 									<!-- paragraph -->
 									<h3 class="animated fadeInRightBig">Crea tu propia libreria de canciones y artistas favoritos.</h3>
+
+									<h3 class="animated fadeInRightBig">Selecciona entre:</h3>
+
+									<ul>
+										
+										<h4 class="animated fadeInLeftBig"><li><a href="{% url 'music-artistas' %}">Artistas</a></li></h4>
+										<h4 class="animated fadeInLeftBig"><li><a href="{% url 'music-canciones' %}">Canciones</a></li></h4>
+										<h4 class="animated fadeInLeftBig"><li><a href="{% url 'music-albums' %}">Albums</a></li></h4>
+
+									</ul>
 									<!-- button -->
 								</div>
 							</div>
@@ -119,138 +122,16 @@
 					</div>
 				</div>
 			</div>
+
+			
 			<!--/ banner end -->
 			
 			<!-- block for animate navigation menu -->
 			<div class="nav-animate"></div>
 			
 			<!-- Hero block area -->
-			<div id="latestalbum" class="hero pad">
-				<div class="container">
-					<!-- hero content -->
-					<div class="hero-content ">
-						<!-- heading -->
-						<h2>Latest Album</h2>
-						<hr>
-						<!-- paragraph -->
-						<p>We sing the best <strong class="theme-color">Songs</strong> and now we control the world best <strong class="theme-color">Music</strong>.</p>
-					</div>
-					<!-- hero play list -->
-					<div class="hero-playlist">
-						<div class="row">
-							<div class="col-md-6 col-sm-6">
-								<!-- music album image -->
-								<div class="figure">
-									<!-- image -->
-									<img class="img-responsive" src="{% static 'appmusic/img/album/1.jpg' %}" alt="" />
-									<!-- disk image -->
-									<img class="img-responsive disk" src="{% static 'appmusic/img/album/disk.png' %}" alt="" />
-								</div>
-								<!-- album details -->
-								<div class="album-details">
-									<!-- title -->
-									<h4>Perfect Melodi</h4>
-									<!-- composed by -->
-									<h5>By Himanshu</h5>
-									<!-- paragraph -->
-									<p>Lorem Ipsum has been the industry's standard dummy text ever since 1500.</p>
-
-								</div>
-							</div>
-							<div class="col-md-6 col-sm-6">
-								<!-- play list -->
-								<div class="playlist-content">
-									<ul class="list-unstyled">
-										<li class="playlist-number">
-											<!-- song information -->
-											<div class="song-info">
-												<!-- song title -->
-												<h4>Melodi Song Track One</h4>
-												<p><strong>Album</strong>: Title &nbsp;|&nbsp; <strong>Type</strong>: Rock &nbsp;|&nbsp; <strong>Singer</strong>: Dawn</p>
-											</div>
-											<div class="clearfix"></div>
-										</li>
-										<li class="playlist-number">
-											<!-- song information -->
-											<div class="song-info">
-												<!-- song title -->
-												<h4>Melodi Song Track Two</h4>
-												<p><strong>Album</strong>: Title &nbsp;|&nbsp; <strong>Type</strong>: Rock &nbsp;|&nbsp; <strong>Singer</strong>: Dawn</p>
-											</div>
-
-											<div class="clearfix"></div>
-										</li>
-										<li class="playlist-number">
-											<!-- song information -->
-											<div class="song-info">
-												<!-- song title -->
-												<h4>Melodi Song Track Three</h4>
-												<p><strong>Album</strong>: Title &nbsp;|&nbsp; <strong>Type</strong>: Rock &nbsp;|&nbsp; <strong>Singer</strong>: Dawn</p>
-											</div>
-
-											<div class="clearfix"></div>
-										</li>
-										<li class="playlist-number">
-											<!-- song information -->
-											<div class="song-info">
-												<!-- song title -->
-												<h4>Melodi Song Track Four</h4>
-												<p><strong>Album</strong>: Title &nbsp;|&nbsp; <strong>Type</strong>: Rock &nbsp;|&nbsp; <strong>Singer</strong>: Dawn</p>
-											</div>
-
-											<div class="clearfix"></div>
-										</li>
-										<li class="playlist-number">
-											<!-- song information -->
-											<div class="song-info">
-												<!-- song title -->
-												<h4>Melodi Song Track Five</h4>
-												<p><strong>Album</strong>: Title &nbsp;|&nbsp; <strong>Type</strong>: Rock &nbsp;|&nbsp; <strong>Singer</strong>: Dawn</p>
-											</div>
-
-											<div class="clearfix"></div>
-										</li>
-										<li class="playlist-number">
-											<!-- song information -->
-											<div class="song-info">
-												<!-- song title -->
-												<h4>Melodi Song Track Six</h4>
-												<p><strong>Album</strong>: Title &nbsp;|&nbsp; <strong>Type</strong>: Rock &nbsp;|&nbsp; <strong>Singer</strong>: Dawn</p>
-											</div>
-											<!-- music icon -->
-
-											<div class="clearfix"></div>
-										</li>
-										<li class="playlist-number">
-											<!-- song information -->
-											<div class="song-info">
-												<!-- song title -->
-												<h4>Melodi Song Track Seven</h4>
-												<p><strong>Album</strong>: Title &nbsp;|&nbsp; <strong>Type</strong>: Rock &nbsp;|&nbsp; <strong>Singer</strong>: Dawn</p>
-											</div>
-                                           
-											<div class="clearfix"></div>
-										</li>
-										<li class="playlist-number">
-											<!-- song information -->
-											<div class="song-info">
-												<!-- song title -->
-												<h4>Melodi Song Track Eight</h4>
-												<p><strong>Album</strong>: Title &nbsp;|&nbsp; <strong>Type</strong>: Rock &nbsp;|&nbsp; <strong>Singer</strong>: Dawn</p>
-											</div>
-
-											<div class="clearfix"></div>
-										</li>
-									</ul>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<!--/ hero end -->
 			
-			<!-- promo -->
+
 
 			<!-- footer -->
 			<footer>
@@ -275,19 +156,19 @@
 		
 		<!-- Javascript files -->
 		<!-- jQuery -->
-		<script src="js/jquery.js"></script>
+		<script src="{% static 'appmusic/js/jquery.js' %}"></script>
 		<!-- Bootstrap JS -->
-		<script src="js/bootstrap.min.js"></script>
+		<script src="{% static 'appmusic/js/bootstrap.min.js' %}"></script>
 		<!-- WayPoints JS -->
-		<script src="js/waypoints.min.js"></script>
+		<script src="{% static 'appmusic/js/waypoints.min.js' %}"></script>
 		<!-- Include js plugin -->
-		<script src="js/owl.carousel.min.js"></script>
+		<script src="{% static 'appmusic/js/owl.carousel.min.js' %}"></script>
 		<!-- One Page Nav -->
-		<script src="js/jquery.nav.js"></script>
+		<script src="{% static 'appmusic/js/jquery.nav.js' %}"></script>
 		<!-- Respond JS for IE8 -->
-		<script src="js/respond.min.js"></script>
+		<script src="{% static 'appmusic/js/respond.min.js' %}"></script>
 		<!-- HTML5 Support for IE -->
-		<script src="js/html5shiv.js"></script>
+		<script src="{% static 'appmusic/js/html5shiv.js' %}"></script>
 		<!-- Custom JS -->
 		<script src="{% static 'appmusic/js/custom.js' %}"></script>
 	</body>	
