@@ -3,3 +3,15 @@
 {% block title %}Albums{% endblock %}
 
 {% block subtitle %}Preserva tus <strong class="theme-color">Albums</strong> favoritos.{% endblock %}
+
+{% block form %}
+
+<form action="" method="post">
+
+    {% csrf_token %}
+    {{formulario.as_p}}
+    <input type="submit" value="Cargar album">
+
+</form> 
+
+{% endblock %}

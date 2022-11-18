@@ -3,3 +3,16 @@
 {% block title %}Artistas{% endblock %}
 
 {% block subtitle %}Guarda tus <strong class="theme-color">Artistas</strong> o bandas preferidos.{% endblock %}
+
+{% block form %}
+
+<form action="" method="post">
+
+    {% csrf_token %}
+    {{formulario.as_p}}
+    <input type="submit" value="Cargar artista">
+
+</form>   
+
+{% endblock %}
+

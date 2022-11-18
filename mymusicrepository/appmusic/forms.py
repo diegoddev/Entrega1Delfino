@@ -1,22 +1,22 @@
 from django import forms
 
-class ArtistasFormulacio(forms.Form):
+class ArtistasFormulario(forms.Form):
 
     nombre = forms.CharField()
-    genero = forms.CharField()
+    genero = forms.CharField(label="Género")
 
-class CancionesFormulacio(forms.Form):
-
-    nombre = forms.CharField()
-    artista = forms.CharField()
-    genero = forms.CharField()
-
-class AlbumsFormulacio(forms.Form):
+class CancionesFormulario(forms.Form):
 
     nombre = forms.CharField()
     artista = forms.CharField()
-    genero = forms.CharField()
-    axo_publicacion = forms.CharField()
+    genero = forms.CharField(label="Género")
+
+class AlbumsFormulario(forms.Form):
+
+    nombre = forms.CharField()
+    artista = forms.CharField()
+    genero = forms.CharField(label="Género")
+    axo_publicacion = forms.CharField(label="Año de Publicación")
 
 
 

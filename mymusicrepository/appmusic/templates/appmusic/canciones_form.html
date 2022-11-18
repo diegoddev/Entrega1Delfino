@@ -3,3 +3,16 @@
 {% block title %}Canciones{% endblock %}
 
 {% block subtitle %}Almacena las <strong class="theme-color">Canciones</strong> que mas te gustan.{% endblock %}
+
+{% block form %}
+
+<form action="" method="post">
+
+    {% csrf_token %}
+    {{formulario.as_p}}
+    <input type="submit" value="Cargar canción">
+
+</form>
+
+{% endblock %}
+
