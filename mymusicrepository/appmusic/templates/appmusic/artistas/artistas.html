@@ -5,7 +5,7 @@
 {% block subtitle %}
 
 Encuentra a tus <strong class="theme-color">Artistas</strong> o bandas preferidos
- | Para Almacenar presiona <a href="{% url 'music-artistas-form' %}">AQUÍ</a>.
+ | Para Almacenar presiona <a href="{% url 'music-artistas-form' %}"><u>AQUÍ</u></a>.
 
 {% endblock %}
 
@@ -15,17 +15,16 @@ Encuentra a tus <strong class="theme-color">Artistas</strong> o bandas preferido
 <div class="hero-playlist">
     <div class="row">
         <div class="col-md-6 col-sm-6">
+
             <!-- music album image -->
             <div class="figure">
-                <!-- image -->
-                <img class="img-responsive" src="{% static 'appmusic/img/album/1.jpg' %}" alt="" />
-                <!-- disk image -->
-                <img class="img-responsive disk" src="{% static 'appmusic/img/album/disk.png' %}" alt="" />
-            </div>
-            <!-- album details -->
 
+                <!-- image -->
+                <img class="img-responsive" src="{% static 'appmusic/img/album/hot82.jpg' %}" alt="" />
+            </div>
         </div>
         <div class="col-md-6 col-sm-6">
+
             <!-- play list -->
             <div class="playlist-content">
                 <ul class="list-unstyled">
@@ -33,16 +32,24 @@ Encuentra a tus <strong class="theme-color">Artistas</strong> o bandas preferido
                     {% for artista in artistas_buscar %}
 
                     <li class="playlist-number">
-                        <!-- song information -->
+
+                        <!-- artist information -->
                         <div class="song-info">
-                            <!-- song title -->
+                            <!-- artist title -->
                             <h4>{{artista.nombre}}</h4>
                             <p><strong>Género</strong>: {{artista.genero}}</p>
                         </div>
+
+                        <!-- music icon -->
+                        <div class="music-icon">
+                            <a href='https://www.youtube.com/results?search_query={{artista}}' target="_blank"><i class="fa fa-play"></i></a>
+                        </div>
+                        
                         <div class="clearfix"></div>
                     </li>
 
                     {% endfor %}
+
                 </ul>
             </div>
         </div>

@@ -5,7 +5,7 @@
 {% block subtitle %}
 
 Estos son tus<strong class="theme-color">Albums</strong> favoritos
- | Para Almacenar presiona <a href="{% url 'music-albums-form' %}">AQUÍ</a>.
+ | Para Almacenar presiona <a href="{% url 'music-albums-form' %}"><u>AQUÍ</u></a>.
 
 {% endblock %}
 
@@ -15,17 +15,16 @@ Estos son tus<strong class="theme-color">Albums</strong> favoritos
 <div class="hero-playlist">
     <div class="row">
         <div class="col-md-6 col-sm-6">
+
             <!-- music album image -->
             <div class="figure">
+
                 <!-- image -->
-                <img class="img-responsive" src="{% static 'appmusic/img/album/1.jpg' %}" alt="" />
-                <!-- disk image -->
-                <img class="img-responsive disk" src="{% static 'appmusic/img/album/disk.png' %}" alt="" />
-            </div>
-            <!-- album details -->
-            
+                <img class="img-responsive" src="{% static 'appmusic/img/album/album.jpg' %}" alt="" />
+            </div>  
         </div>
         <div class="col-md-6 col-sm-6">
+
             <!-- play list -->
             <div class="playlist-content">
                 <ul class="list-unstyled">
@@ -33,9 +32,10 @@ Estos son tus<strong class="theme-color">Albums</strong> favoritos
                     {% for album in albums_buscar %}
 
                     <li class="playlist-number">
-                        <!-- song information -->
+
+                        <!-- album information -->
                         <div class="song-info">
-                            <!-- song title -->
+                            <!-- album title -->
                             <h4>{{album.nombre}}</h4>
                             <p><strong>Artista</strong>: {{album.artista}} &nbsp;|&nbsp; <strong>Género</strong>: {{album.genero}} &nbsp;|&nbsp; <strong>Año</strong>: {{album.axo_publicacion}}</p>
                         </div>

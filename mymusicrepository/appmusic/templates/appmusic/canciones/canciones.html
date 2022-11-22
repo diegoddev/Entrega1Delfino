@@ -5,7 +5,7 @@
 {% block subtitle %}
 
 Dale un vistazo a las <strong class="theme-color">Canciones</strong> que mas te gustan
- | Para Almacenar presiona <a href="{% url 'music-canciones-form' %}">AQUÍ</a>.
+ | Para Almacenar presiona <a href="{% url 'music-canciones-form' %}"><u>AQUÍ</u></a>.
 
 {% endblock %}
 
@@ -15,17 +15,16 @@ Dale un vistazo a las <strong class="theme-color">Canciones</strong> que mas te 
 <div class="hero-playlist">
     <div class="row">
         <div class="col-md-6 col-sm-6">
+
             <!-- music album image -->
             <div class="figure">
-                <!-- image -->
-                <img class="img-responsive" src="{% static 'appmusic/img/album/1.jpg' %}" alt="" />
-                <!-- disk image -->
-                <img class="img-responsive disk" src="{% static 'appmusic/img/album/disk.png' %}" alt="" />
-            </div>
-            <!-- album details -->
 
+                <!-- image -->
+                <img class="img-responsive" src="{% static 'appmusic/img/album/recordlabel.jpg' %}" alt="" />
+            </div>
         </div>
         <div class="col-md-6 col-sm-6">
+
             <!-- play list -->
             <div class="playlist-content">
                 <ul class="list-unstyled">
@@ -33,12 +32,19 @@ Dale un vistazo a las <strong class="theme-color">Canciones</strong> que mas te 
                     {% for cancion in canciones_buscar %}
 
                     <li class="playlist-number">
+
                         <!-- song information -->
                         <div class="song-info">
                             <!-- song title -->
                             <h4>{{cancion.nombre}}</h4>
                             <p><strong>Artista</strong>: {{cancion.artista}} &nbsp;|&nbsp; <strong>Género</strong>: {{cancion.genero}}</p>
                         </div>
+                        
+                        <!-- music icon -->
+                        <div class="music-icon">
+                            <a href='https://www.youtube.com/results?search_query={{cancion}}' target="_blank"><i class="fa fa-play"></i></a>
+                        </div>
+
                         <div class="clearfix"></div>
                     </li>
 

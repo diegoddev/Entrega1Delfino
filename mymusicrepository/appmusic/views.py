@@ -11,7 +11,7 @@ def index(request):
 def artistas(request):
 
     artistas_buscar = Artistas.objects.all()
-    return render(request, "appmusic/artistas.html", {"artistas_buscar": artistas_buscar})
+    return render(request, "appmusic/artistas/artistas.html", {"artistas_buscar": artistas_buscar})
 
 
 def artistas_create(request):
@@ -31,13 +31,13 @@ def artistas_create(request):
 
     context = {"formulario": formulario}
 
-    return render(request, "appmusic/artistas_form.html", context)
+    return render(request, "appmusic/artistas/artistas_form.html", context)
 
 
 def canciones(request):
 
     canciones_buscar = Canciones.objects.all()
-    return render(request, "appmusic/canciones.html", {"canciones_buscar": canciones_buscar})
+    return render(request, "appmusic/canciones/canciones.html", {"canciones_buscar": canciones_buscar})
 
 
 def canciones_create(request):
@@ -57,13 +57,13 @@ def canciones_create(request):
 
     context = {"formulario": formulario}
 
-    return render(request, "appmusic/canciones_form.html", context)
+    return render(request, "appmusic/canciones/canciones_form.html", context)
 
 
 def albums(request):
 
     albums_buscar = Albums.objects.all()
-    return render(request, "appmusic/albums.html", {"albums_buscar": albums_buscar})
+    return render(request, "appmusic/albums/albums.html", {"albums_buscar": albums_buscar})
 
 
 def albums_create(request):
@@ -82,11 +82,11 @@ def albums_create(request):
     formulario = AlbumsFormulario()
 
     context = {"formulario": formulario}
-    return render(request, "appmusic/albums_form.html", context)
+    return render(request, "appmusic/albums/albums_form.html", context)
 
 
 def search(request):
-    return render(request, "appmusic/search.html")
+    return render(request, "appmusic/search/search.html")
 
 
 def search_result(request):
@@ -94,6 +94,6 @@ def search_result(request):
     artista_canciones = request.GET["artista_canciones"]
     canciones = Canciones.objects.filter(artista__icontains = artista_canciones)
 
-    return render(request, "appmusic/search_result.html", {"canciones": canciones})
+    return render(request, "appmusic/search/search_result.html", {"canciones": canciones})
 
 

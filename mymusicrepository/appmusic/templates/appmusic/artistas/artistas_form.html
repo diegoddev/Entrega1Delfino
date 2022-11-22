@@ -6,13 +6,13 @@
 
 {% block form %}
 
-<form action="" method="post">
+<form method="post" action="">
 
     {% csrf_token %}
     {{formulario.as_p}}
     <input type="submit" value="Cargar artista">
 
-</form>   
+</form>
 
 {% endblock %}
 
